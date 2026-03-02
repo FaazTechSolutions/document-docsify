@@ -32,9 +32,9 @@
           var branch = 'main';
           var docsPath = 'docs/';
 
-          // PagesCMS config
+          // PagesCMS config — must point to the CONTENT repo (document-in-docsify), not the CMS app repo
           var pagesCmsBase = 'https://pages-cms-ten-psi.vercel.app';
-          var pagesCmsOwner = 'mohammedalith1312';
+          var pagesCmsOwner = 'MohammedAlith1312';
           var pagesCmsRepo = 'document-in-docsify';
           var pagesCmsCollection = 'pages'; // matches "name: pages" in .pages.yml
 
@@ -45,8 +45,8 @@
             // GitHub edit URL
             var githubEditUrl = 'https://github.com/' + owner + '/' + repo + '/edit/' + branch + '/' + docsPath + file;
 
-            // PagesCMS edit URL — encode "docs/{file}" with %2F for slashes
-            var encodedFilePath = encodeURIComponent(docsPath + file);
+            // PagesCMS edit URL — encode "{file}" with %2F for slashes
+            var encodedFilePath = encodeURIComponent(file);
             var pagesCmsUrl = pagesCmsBase + '/' + pagesCmsOwner + '/' + pagesCmsRepo + '/' + branch
               + '/collection/' + pagesCmsCollection + '/edit/' + encodedFilePath;
 
